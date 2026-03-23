@@ -1,4 +1,5 @@
 # SSCS-2025-Arduino
+🏆 1st Place, IEEE SSCS Arduino Contest 2025 (Post-Secondary)
 
 Meet Halo | IEEE SSCS Arduino Contest 2025
 https://www.youtube.com/watch?v=oZpIQhcpVok&t=1s
