@@ -10,6 +10,8 @@ extern const char* GEMINI_API_KEY;
 
 extern const char* DEEPGRAM_API_KEY;
 
+extern const char* GOOGLE_TTS_API_KEY;
+
 extern const char* NOTIFICATIONS_API_URL;
 
 #endif

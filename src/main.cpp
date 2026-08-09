@@ -785,6 +785,7 @@ void setup() {
     }
     
     // Try to initialize TTS with Deepgram API key
+    tts.setGoogleTtsApiKey(GOOGLE_TTS_API_KEY);
     if (tts.initialize(DEEPGRAM_API_KEY)) {
         Serial.println("TTS initialized successfully!");
         ttsAvailable = true;

@@ -26,6 +26,7 @@ private:
     
     bool i2sInitialized;
     String deepgramApiKey;
+    String googleTtsApiKey;
     String defaultLanguage;
     
     // Audio gain control
@@ -52,6 +53,7 @@ public:
     
     // Language configuration
     void setDefaultLanguage(const String& language);
+    void setGoogleTtsApiKey(const String& apiKey);
     
     // Audio playback control
     bool playAudioData(const uint8_t* audioData, size_t dataSize);
@@ -77,6 +79,12 @@ private:
     bool initializeI2S();
     bool callDeepgramAPI(const String& text, uint8_t** audioData, size_t* dataSize);
     bool callDeepgramAPI(const String& text, const String& language, uint8_t** audioData, size_t* dataSize);
+    bool callGoogleTtsAPI(const String& text, const String& language, uint8_t** audioData, size_t* dataSize);
+    bool callGoogleTranslateTtsAPI(const String& text, const String& language, uint8_t** audioData, size_t* dataSize);
+    bool hasDeepgramVoice(const String& language);
+    bool hasCloudTtsVoice(const String& language);
+    String googleLanguageCode(const String& language);
+    String translateTtsLanguageCode(const String& language);
     bool streamDeepgramAPI(const String& text);  // Streaming method for raw PCM
     bool streamDeepgramAPI(const String& text, const String& language);  // Streaming method with language
     void cleanupAudioData(uint8_t* audioData);
