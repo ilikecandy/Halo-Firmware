@@ -42,12 +42,7 @@ uint8_t* DeepgramClient::createWAVData(const uint8_t* pcm_data, size_t pcm_size,
     }
     
     // Create WAV header
-    WAVHeader header;
-    header.chunk_size = wav_data_size - 8;
-    header.data_size = pcm_size;
-    header.sample_rate = 16000;
-    header.byte_rate = 16000 * 2;
-    header.block_align = 2;
+    WAVHeader header = make_wav_header(pcm_size);
     
     // Copy header and PCM data
     memcpy(wav_data, &header, sizeof(WAVHeader));
